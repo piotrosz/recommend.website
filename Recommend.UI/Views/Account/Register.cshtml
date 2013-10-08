@@ -1,0 +1,50 @@
+﻿@model Recommend.UI.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+        @Html.ValidationSummary(excludePropertyErrors:true)
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-lg-2 control-label"})
+    
+        <div class="col-lg-10">
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new { @class = "col-lg-2 control-label"})
+
+        <div class="col-lg-10">
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-lg-2 control-label"})
+   
+        <div class="col-lg-10"> 
+            @Html.PasswordFor(m => m.ConfirmPassword)
+            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-default">Register</button>
+        </div>
+    </div>
+}
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/custom/validation.js"></script>        
+}

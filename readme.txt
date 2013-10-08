@@ -1,0 +1,1 @@
+Bootstrap stype copied from: http://getbootstrap.com/examples/jumbotron/

@@ -1,0 +1,29 @@
+﻿@model Recommend.UI.Models.LoginModel
+
+@using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "navbar-form navbar-right"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(excludePropertyErrors: true )
+
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Email, new {@class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Email)})
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger"})
+    </div>
+
+    <div class="form-group">
+        @Html.PasswordFor(m => m.Password, new {@class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Password)})
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger"})
+    </div>
+
+    <button type="submit" class="btn btn-success">Sign in</button>
+
+    <label>
+        @Html.ActionLink("Register", "Register", null, new { @class = "btn btn-primary" })
+    </label>
+    
+}
+@*<section id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>*@
+
