@@ -1,0 +1,38 @@
+﻿@model Recommend.UI.ViewModels.LoginModel
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.ValidationSummary(excludePropertyErrors: true )
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserName)
+        
+        @Html.TextBoxFor(m => m.UserName, new {@class = "form-control", placeholder = @Html.DisplayNameFor(m => m.UserName)})
+        @Html.ValidationMessageFor(m => m.UserName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        
+        @Html.PasswordFor(m => m.Password, new {@class = "form-control", placeholder = @Html.DisplayNameFor(m => m.Password)})
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+
+    <div class="form-group">
+        @Html.ActionLink("Forgot password?", "RecoverPassword")
+    </div>
+    
+    <button type="submit" class="btn btn-success">Log in</button>
+    
+    <hr/>
+    
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+}
+
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/custom/validation.js"></script>        
+}

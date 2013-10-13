@@ -1,0 +1,25 @@
+﻿<div class="navbar-right">
+@if (Request.IsAuthenticated) 
+{        
+    <span class="navbar-text">
+    You are logged as 
+        
+    @Html.ActionLink(User.Identity.Name, "Manage", "Account", 
+        routeValues: null, 
+        htmlAttributes: new { @class = "username", title = "Manage" })
+    </span>
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-form navbar-right" })) 
+    {
+        @Html.AntiForgeryToken()
+        <a href="javascript:$('#logoutForm').submit()" class="btn btn-default">Log off</a>
+    }
+} 
+else
+{
+    <div class="navbar-form">
+        @Html.ActionLink("Log in", "Login", "Account", null, new { @class = "btn btn-success" })
+        @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary" })
+    </div>
+}
+</div>

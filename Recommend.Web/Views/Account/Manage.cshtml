@@ -1,0 +1,36 @@
+﻿@model Recommend.UI.ViewModels.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+@section userinfo {
+    @Html.Partial("_LoginPartial")
+}
+
+<div class="page-header">
+
+@if (!string.IsNullOrEmpty(ViewBag.StatusMessage))
+{
+    <div class="alert alert-success">@ViewBag.StatusMessage</div>
+}
+
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+    @*
+else
+{ 
+    @Html.Partial("_SetPasswordPartial")
+}*@
+
+</div>
+
+<section id="externalLogins">
+    @Html.Action("RemoveExternalLogins")
+
+    <h3>Add an external login</h3>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+
+</section>
+
