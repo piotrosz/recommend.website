@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Recommend.Core.Models;
-using WebMatrix.WebData;
 
 namespace Recommend.Core.DAL
 {
@@ -16,7 +15,7 @@ namespace Recommend.Core.DAL
     {
         protected override void Seed(RecommendationsContext context)
         {
-            SeedMembership();
+           // SeedMembership();
 
             var users = new List<User>
                 {
@@ -37,14 +36,14 @@ namespace Recommend.Core.DAL
             context.SaveChanges();
         }
 
-        private void SeedMembership()
-        {
-            WebSecurity.InitializeDatabaseConnection(
-               connectionStringName: "DefaultConnection",
-               userTableName: "User",
-               userIdColumn: "Id",
-               userNameColumn: "UserName",
-               autoCreateTables: true);
-        }
+        //private void SeedMembership()
+        //{
+        //    WebSecurity.InitializeDatabaseConnection(
+        //       connectionStringName: "DefaultConnection",
+        //       userTableName: "User",
+        //       userIdColumn: "Id",
+        //       userNameColumn: "UserName",
+        //       autoCreateTables: true);
+        //}
     }
 }

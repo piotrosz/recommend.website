@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Recommend.Core.Models;
-using WebMatrix.WebData;
 
 namespace Recommend.Core.Migrations
 {
