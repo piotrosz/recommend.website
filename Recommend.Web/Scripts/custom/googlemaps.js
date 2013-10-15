@@ -8,6 +8,7 @@
         // Create the map div and insert it into the page.
         var $map = $('<div>', {
             css: {
+                marginTop: '10px',
                 width: '550px',
                 height: '550px'
             }
@@ -39,7 +40,8 @@
         // Place a marker on it, representing the DBGeometry object's position.
         var marker = new google.maps.Marker({
             position: position,
-            map: map
+            map: map,
+            draggable: true
         });
 
         var updateMarker = function (updateEvent) {
