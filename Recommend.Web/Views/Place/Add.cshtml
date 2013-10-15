@@ -32,6 +32,12 @@
     </div>
     
     <div class="form-group">
+        @Html.LabelFor(m => m.Link)
+        @Html.TextBoxFor(m => m.Link, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Link)
+    </div>
+    
+    <div class="form-group">
         @Html.LabelFor(m => m.Location)
         @Html.EditorFor(model => model.Location)      
         @Html.ValidationMessageFor(m => m.Location)
