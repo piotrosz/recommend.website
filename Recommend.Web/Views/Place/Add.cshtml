@@ -16,7 +16,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        @Html.ValidationSummary(excludePropertyErrors:true)
+        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
     </div>
     
     <div class="form-group">
@@ -32,7 +32,9 @@
     </div>
     
     <div class="form-group">
+        @Html.LabelFor(m => m.Location)
         @Html.EditorFor(model => model.Location)      
+        @Html.ValidationMessageFor(m => m.Location)
     </div>
     
     <div class="form-group">
