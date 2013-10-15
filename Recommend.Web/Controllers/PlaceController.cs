@@ -26,6 +26,11 @@ namespace Recommend.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(Place place)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(place);
+            }
+            
             try
             {
                 _unitOfWork.Places.Insert(place);
