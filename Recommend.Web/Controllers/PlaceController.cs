@@ -26,6 +26,19 @@ namespace Recommend.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(Place place)
         {
+            try
+            {
+                _unitOfWork.Places.Insert(place);
+                _unitOfWork.Save();
+
+                TempData["SuccessMessage"] = "Place has been added!";
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex);
+            }
+            
             return RedirectToAction("List");
         }
 
