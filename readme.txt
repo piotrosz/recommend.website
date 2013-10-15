@@ -16,3 +16,4 @@ Bootstrap style copied from: http://getbootstrap.com/examples/jumbotron/
 Enable-Migrations -ProjectName Recommend.Core -StartupProjectName Recommend.Web [-Force]
 Add-Migration AddedCreatedOnComputedColumns -ProjectName Recommend.Core -StartupProjectName Recommend.Web
 Update-Database -ProjectName Recommend.Core -StartupProjectName Recommend.Web
+Update-Database -ProjectName Recommend.Core -StartupProjectName Recommend.Web -ConnectionString -ProviderName System.Data.SqlClient
