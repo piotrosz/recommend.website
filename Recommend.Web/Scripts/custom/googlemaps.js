@@ -58,6 +58,7 @@
         // If the input came from an EditorFor, initialize editing-related events.
         if ($input.hasClass('editor-for-dbgeography')) {
             google.maps.event.addListener(map, 'click', updateMarker);
+            google.maps.event.addListener(marker, 'dragend', updateMarker);
 
             // Attempt to react to user edits in the input field.
             $input.on('change', function () {
