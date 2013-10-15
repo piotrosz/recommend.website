@@ -33,7 +33,7 @@
             zoom: 14,
             center: position,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            maxZoom: 14
+            maxZoom: 20
         });
 
         // Place a marker on it, representing the DBGeometry object's position.
