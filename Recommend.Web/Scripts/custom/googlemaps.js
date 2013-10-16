@@ -32,6 +32,7 @@
         // Initialize the map widget.
         var map = new google.maps.Map($map[0], {
             zoom: 14,
+            scrollwheel: false,
             center: position,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             maxZoom: 20

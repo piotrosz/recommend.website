@@ -8,7 +8,24 @@
 {
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="~/Scripts/custom/googlemaps.js"></script>
-    <script type="text/javascript" src="~/Scripts/custom/validation.js"></script>   
+    <script type="text/javascript" src="~/Scripts/custom/validation.js"></script>  
+    <script type="text/javascript" src="~/Scripts/tinymce/tinymce.js"></script> 
+    
+    <script type="text/javascript">
+        $(function () {
+            tinymce.init({
+                selector: "#@Html.IdFor(m => m.Description)",
+                theme: "modern",
+                menubar: false,
+                resize: false,
+                statusbar: false,
+                height: 200,
+                plugins: ["advlist autolink lists charmap preview hr anchor link image",
+                    "pagebreak code nonbreaking table contextmenu directionality paste"],
+                toolbar1: "styleselect | bold italic underline | link image | bullist numlist outdent indent"
+            });
+        });
+    </script>
 }
 
 @using (Html.BeginForm("Add", "Place", FormMethod.Post, new {@class = "form-place", role = "form"}))
