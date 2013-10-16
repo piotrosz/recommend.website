@@ -8,7 +8,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-group">
-         @Html.ValidationSummary(true "", new { @class = "alert alert-danger" })
+         @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
     </div>
     
     <div class="form-group">
@@ -41,5 +41,5 @@
 }
 
 @section scripts {
-    <script type="text/javascript" src="~/Scripts/custom/validation.js"></script>        
+    <script type="text/javascript" src="~/Scripts/custom/validation.js"></script>    
 }

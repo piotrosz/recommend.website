@@ -8,6 +8,8 @@ namespace Recommend.UI.App_Start
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // Scripts
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -25,6 +27,8 @@ namespace Recommend.UI.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/respond").Include(
                         "~/Scripts/respond.js"));
+
+            // Styles
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

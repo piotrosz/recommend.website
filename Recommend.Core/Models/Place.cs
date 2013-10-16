@@ -26,7 +26,7 @@ namespace Recommend.Core.Models
         public byte[] PhotoFile { get; set; }
 
         [DisplayName("Link")]
-        [Url(ErrorMessage = "Not URL")]
+        [Url(ErrorMessage = "This is not a valid URL")]
         public string Link { get; set; }
 
         public int UserId { get; set; }
