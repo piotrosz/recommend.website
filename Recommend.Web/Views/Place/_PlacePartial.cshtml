@@ -1,0 +1,7 @@
+﻿@model Recommend.Core.Models.Place
+
+<div class="col-lg-4">
+    <h2>@Model.Name</h2>
+    <p>@Model.ShortDescription</p>
+    <p><a class="btn btn-default" href="@Url.Action("Details", new { Id = Model.Id })">View details &raquo;</a></p>
+</div>

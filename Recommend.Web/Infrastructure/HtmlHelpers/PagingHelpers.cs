@@ -16,7 +16,7 @@ namespace Recommend.UI.Infrastructure.HtmlHelpers
             
             var result = new StringBuilder();
             
-            //previous link
+            // previous link
             string prevLink = (pagingInfo.CurrentPage == 1)
                 ? pagingBuilder.BuildHtmlItem(pageUrl(pagingInfo.CurrentPage - 1), "Prev", false, true)
                 : pagingBuilder.BuildHtmlItem(pageUrl(pagingInfo.CurrentPage - 1), "Prev");

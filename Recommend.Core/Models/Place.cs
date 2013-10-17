@@ -38,5 +38,16 @@ namespace Recommend.Core.Models
         [Required]
         [DisplayName("Location")]
         public DbGeography Location { get; set; }
+
+        [NotMapped]
+        public string ShortDescription
+        {
+            get
+            {
+                // TODO: Split words
+                const int shortDescriptionLength = 200;
+                return Description.Length > shortDescriptionLength ? Description.Substring(0, shortDescriptionLength) + "..." : Description; 
+            }
+        }
     }
 }
