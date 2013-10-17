@@ -210,11 +210,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\HtmlHelpers\HtmlExtensions.cs" />
+    <Compile Include="Infrastructure\HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\ModelBinders\DbGeographyModelBinder.cs" />
-    <Compile Include="Infrastructure\ModelBinders\EFModelBinderProvider.cs" />
+    <Compile Include="Infrastructure\ModelBinders\RecommendModelBinderProvider.cs" />
+    <Compile Include="Infrastructure\ModelBinders\UserIdBinder.cs" />
     <Compile Include="Infrastructure\TempDataExtensions.cs" />
     <Compile Include="ViewModels\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PlacesListViewModel.cs" />
+    <Compile Include="ViewModels\PagingInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap-theme.css" />

@@ -7,11 +7,16 @@ using System.Web.Mvc;
 
 namespace Recommend.UI.Infrastructure.ModelBinders
 {
-    public class EFModelBinderProvider : IModelBinderProvider
+    public class RecommendModelBinderProvider : IModelBinderProvider
     {
         public IModelBinder GetBinder(Type modelType)
         {
-            return modelType == typeof(DbGeography) ? new DbGeographyModelBinder() : null;
+            if (modelType == typeof (DbGeography))
+            {
+                return new DbGeographyModelBinder();
+            }
+
+            return null;
         }
     }
 }

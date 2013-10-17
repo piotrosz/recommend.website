@@ -37,7 +37,7 @@ namespace Recommend.UI
             //// call a query on the database to make sure it gets created before any authorization/authentication code is called.
             //new RecommendationsContext().Users.Find(1);
 
-            ModelBinderProviders.BinderProviders.Add(new EFModelBinderProvider());
+            ModelBinderProviders.BinderProviders.Add(new RecommendModelBinderProvider());
 
             WebSecurity.InitializeDatabaseConnection(
                connectionStringName: "DefaultConnection",

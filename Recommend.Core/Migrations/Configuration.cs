@@ -21,7 +21,7 @@ namespace Recommend.Core.Migrations
         {
             var users = new List<User>
                 {
-                    new User("adam", "test@test.pl") {Id = 2}
+                    new User("Automation", "test@test.pl") {Id = 2}
                 };
 
             users.ForEach(u => context.Users.AddOrUpdate(
