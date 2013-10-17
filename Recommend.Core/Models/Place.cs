@@ -7,6 +7,7 @@ using System.Data.Spatial;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Recommend.Core.Models
 {
@@ -19,6 +20,7 @@ namespace Recommend.Core.Models
         public string Name { get; set; }
 
         [Required]
+        [AllowHtml]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 

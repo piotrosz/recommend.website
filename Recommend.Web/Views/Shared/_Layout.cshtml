@@ -9,6 +9,7 @@
         @Styles.Render("~/Content/bootstrap/theme")
         @Styles.Render("~/Content/custom")
         @Scripts.Render("~/bundles/modernizr")
+        
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -59,16 +60,43 @@
 
     @RenderSection("featured", required: false)
 
-    <div class="container">
-      @RenderBody()
+        <div class="container">
+        
+            @if (TempData["AlertSuccess"] != null || TempData["AlertInfo"] != null || TempData["AlertWarning"] != null || TempData["AlertDanger"] != null)
+            {
+                <div class="message-area">
+                    @if (TempData["AlertSuccess"] != null)
+                    {
+                        <div class="alert alert-success">@TempData["AlertSuccess"]</div>
+                    }
+            
+                    @if (TempData["AlertInfo"] != null)
+                    {
+                        <div class="alert alert-info">@TempData["AlertInfo"]</div>
+                    }
+            
+                    @if(TempData["AlertWarning"] != null)
+                    {
+                        <div class="alert alert-warning">@TempData["AlertWarning"]</div>
+                    }
+            
+                    @if (TempData["AlertDanger"] != null)
+                    {
+                        <div class="alert alert-danger">@TempData["AlertDanger"]</div>    
+                    }    
+                </div>    
+            }
+            
+            @RenderBody()
 
-      <hr>
-      <footer>
-        <p>&copy; 2013</p>
-      </footer>
-    </div> <!-- /container -->
-
+            <hr>
+            <footer>
+                <p>&copy; 2013</p>
+            </footer>
+        </div> <!-- /container -->
+        
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryval")
 

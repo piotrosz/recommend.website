@@ -20,20 +20,19 @@
                 resize: false,
                 statusbar: false,
                 height: 200,
-                plugins: ["advlist autolink lists charmap preview hr anchor link image",
-                    "pagebreak code nonbreaking table contextmenu directionality paste"],
+                plugins: ["advlist autolink lists charmap preview hr anchor link image", "pagebreak code nonbreaking table contextmenu directionality paste"],
                 toolbar1: "styleselect | bold italic underline | link image | bullist numlist outdent indent"
             });
         });
     </script>
 }
 
-@using (Html.BeginForm("Add", "Place", FormMethod.Post, new {@class = "form-place", role = "form"}))
+@using (Html.BeginForm("Add", "Place", FormMethod.Post, new { @class = "form-place", role = "form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-group">
-        @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+        @Html.ValidationSummary(true, "Please correct the validation errors", new { @class = "alert alert-danger" })
     </div>
     
     <div class="form-group">
@@ -58,14 +57,14 @@
         @Html.LabelFor(m => m.Location)
         @Html.EditorFor(model => model.Location)      
         @Html.ValidationMessageFor(m => m.Location)
-    </div>
+    </div>@*
     
     <div class="form-group">
         @Html.LabelFor(m => m.PhotoFile)
        
-        <input type="file" id="@Html.NameFor(m => m.PhotoFile)" value="Choose">
+        <input type="file" id="uploadedFile" name="uploadedFile" value="Choose">
         <p class="help-block">Choose image to upload</p>
-    </div>
+    </div>*@
     
     <div class="form-group">
         <button type="submit" class="btn btn-success">Add</button>

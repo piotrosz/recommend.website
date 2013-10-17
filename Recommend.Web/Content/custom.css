@@ -10,3 +10,8 @@
 .form-place {
     max-width: 550px;
 }
+
+.message-area {
+    padding: 40px 15px;
+    text-align: center;
+}

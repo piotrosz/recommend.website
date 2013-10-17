@@ -2,7 +2,10 @@
 
 @if (Model != null)
 {
-    @Html.TextBox("", Model.Latitude + "," + Model.Longitude, new {@class = "editor-for-dbgeography form-control"})
+    string latitute = Model.Latitude.HasValue ? Model.Latitude.Value.ToString(System.Globalization.CultureInfo.InvariantCulture) : "";
+    string longitute = Model.Longitude.HasValue ? Model.Longitude.Value.ToString(System.Globalization.CultureInfo.InvariantCulture) : "";
+    
+    @Html.TextBox("", latitute + "," + longitute, new {@class = "editor-for-dbgeography form-control"})
 }
 else
 {

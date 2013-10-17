@@ -212,6 +212,7 @@
     <Compile Include="Infrastructure\HtmlHelpers\HtmlExtensions.cs" />
     <Compile Include="Infrastructure\ModelBinders\DbGeographyModelBinder.cs" />
     <Compile Include="Infrastructure\ModelBinders\EFModelBinderProvider.cs" />
+    <Compile Include="Infrastructure\TempDataExtensions.cs" />
     <Compile Include="ViewModels\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -512,6 +513,7 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon.svg" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\icomoon.eot" />
     <Content Include="Scripts\tinymce\langs\readme.md" />
+    <Content Include="Views\Place\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
